@@ -1,0 +1,113 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: 200vh;
+  }
+}
+
+.container .imgdiv {
+  width: 30%;
+  height: 320px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .container .imgdiv {
+    width: 70%;
+    height: 400px;
+  }
+}
+
+.container .imgdiv img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.container .imgdiv .imagetext {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 0%;
+  text-align: center;
+  background-color: silver;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .imgdiv .imagetext h1 {
+  opacity: 0;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+.container .imgdiv::before, .container .imgdiv::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 8%;
+  background-color: black;
+  border-radius: 10px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  z-index: 6;
+}
+
+.container .imgdiv::before {
+  top: 0;
+}
+
+.container .imgdiv::after {
+  bottom: 0;
+  right: 0;
+}
+
+.container .imgdiv:hover::before, .container .imgdiv:hover::after {
+  width: 100%;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+.container .imgdiv:hover .imagetext {
+  height: 100%;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  background-color: rgba(192, 192, 192, 0.2);
+  z-index: 1;
+}
+
+.container .imgdiv:hover .imagetext h1 {
+  font-size: 2.8rem;
+  opacity: 1;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  z-index: 5;
+}
+/*# sourceMappingURL=stylee.css.map */
